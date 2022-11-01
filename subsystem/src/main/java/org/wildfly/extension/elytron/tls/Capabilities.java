@@ -52,10 +52,10 @@ class Capabilities {
 
     private static final String WILDFLY_SECURITY_CAPABILITY_BASE = "org.wildfly.security.";
 
-    static final String ELYTRON_TLS_SUBSYSTEM_CAPABILITY_NAME = "org.wildfly.extras.elytron-tls";
+    static final String ELYTRON_TLS_CAPABILITY_NAME = "org.wildfly.extras.elytron-tls";
     
     static final RuntimeCapability<Consumer<ServiceBuilder>> ELYTRON_TLS_RUNTIME_CAPABILITY = RuntimeCapability.Builder
-            .of(ELYTRON_TLS_SUBSYSTEM_CAPABILITY_NAME, COMMON_REQUIREMENTS)
+            .of(ELYTRON_TLS_CAPABILITY_NAME, COMMON_REQUIREMENTS)
             .build();
 
     static final String CERTIFICATE_AUTHORITY_ACCOUNT_CAPABILITY = WILDFLY_SECURITY_CAPABILITY_BASE + "certificate-authority-account";

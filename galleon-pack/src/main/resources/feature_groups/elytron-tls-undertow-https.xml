@@ -14,12 +14,13 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<!-- Base configuration for the Elytron TLS subsystem -->
-<feature-group-spec name="undertow-elytron-tls" xmlns="urn:jboss:galleon:feature-group:1.0">
-    <feature spec="subsystem.elytron-tls.server-ssl-context">
-        <param name="server-ssl-context" value="elytron-tls-server-context"/>
-
-    </feature>
+<!-- Elytron TLS subsystem configured with Undertow HTTPS listener -->
+<feature-group-spec name="elytron-tls-undertow-https" xmlns="urn:jboss:galleon:feature-group:1.0">
+    <feature-group name="elytron-tls">
+        <feature spec="subsystem.elytron-tls.server-ssl-context">
+            <param name="server-ssl-context" value="elytron-tls-server-context"/>
+        </feature>
+    </feature-group>
     <feature spec="subsystem.undertow">
         <feature spec="subsystem.undertow.server">
             <param name="server" value="default-server" />

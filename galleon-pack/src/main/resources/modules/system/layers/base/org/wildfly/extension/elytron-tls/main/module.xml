@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright 2019 Red Hat, Inc.
+  ~ Copyright 2022 Red Hat, Inc.
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@
     </resources>
 
     <dependencies>
-        <!-- Typical module dependencies for a subsystem -->
-        <module name="java.security.sasl"/>
-        <module name="javax.enterprise.api"/>
         <module name="org.jboss.as.controller"/>
         <module name="org.jboss.as.server"/>
         <module name="org.jboss.logging"/>
@@ -34,9 +31,6 @@
         <module name="org.jboss.staxmapper"/>
         <module name="org.wildfly.common"/>
         <module name="org.wildfly.security.elytron-base"/>
-        <!-- TODO: Remove this module once key store and manager objects are implemented -->
-        <module name="org.wildfly.extension.elytron"/>
-        <module name="org.wildfly.security.elytron-web.undertow-server"/>
         <module name="org.wildfly.security.manager"/>
     </dependencies>
 </module>

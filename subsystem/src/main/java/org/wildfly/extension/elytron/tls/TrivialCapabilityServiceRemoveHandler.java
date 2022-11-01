@@ -17,7 +17,7 @@
  */
 package org.wildfly.extension.elytron.tls;
 
-import static org.wildfly.extension.elytron.tls.Capabilities.ELYTRON_TLS_SUBSYSTEM_CAPABILITY_NAME;
+import static org.wildfly.extension.elytron.tls.Capabilities.ELYTRON_TLS_CAPABILITY_NAME;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -60,7 +60,7 @@ class TrivialCapabilityServiceRemoveHandler extends ServiceRemoveStepHandler imp
         super.recordCapabilitiesAndRequirements(context, operation, resource);
         final String pathValue = context.getCurrentAddressValue();
         for (RuntimeCapability<?> r : allCapabilities) {
-            context.deregisterCapabilityRequirement(ELYTRON_TLS_SUBSYSTEM_CAPABILITY_NAME, r.isDynamicallyNamed() ? r.getDynamicName(pathValue) : r.getName());
+            context.deregisterCapabilityRequirement(ELYTRON_TLS_CAPABILITY_NAME, r.isDynamicallyNamed() ? r.getDynamicName(pathValue) : r.getName());
         }
     }
 

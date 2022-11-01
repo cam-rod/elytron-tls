@@ -2,7 +2,6 @@
 
 <tasks xmlns="urn:wildfly:wildfly-feature-pack-tasks:2.0">
     <copy-path src="docs/licenses/licenses.xsl" relative-to="content" target="docs/licenses/elytron-tls-galleon-pack-licenses.xsl"/>
-    <!-- TODO In 'src' and 'output' use the name you gave the licenses xml file -->
     <transform stylesheet="docs/licenses/elytron-tls-galleon-pack-licenses.xsl" src="docs/licenses/elytron-tls-galleon-pack-licenses.xml" output="docs/licenses/elytron-tls-galleon-pack-licenses.html" feature-pack-properties="true"/>
     <delete path="docs/licenses/elytron-tls-galleon-pack-licenses.xsl"/>
 </tasks>

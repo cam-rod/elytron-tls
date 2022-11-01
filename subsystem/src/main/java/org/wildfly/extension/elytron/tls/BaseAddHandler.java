@@ -17,7 +17,7 @@
  */
 package org.wildfly.extension.elytron.tls;
 
-import static org.wildfly.extension.elytron.tls.Capabilities.ELYTRON_TLS_SUBSYSTEM_CAPABILITY_NAME;
+import static org.wildfly.extension.elytron.tls.Capabilities.ELYTRON_TLS_CAPABILITY_NAME;
 
 import java.util.Collections;
 import java.util.Set;
@@ -81,7 +81,7 @@ class BaseAddHandler extends AbstractAddStepHandler implements ElytronOperationS
         super.recordCapabilitiesAndRequirements(context, operation, resource);
         final String pathValue = context.getCurrentAddressValue();
         for (RuntimeCapability r : runtimeCapabilities) {
-            context.registerAdditionalCapabilityRequirement(ELYTRON_TLS_SUBSYSTEM_CAPABILITY_NAME, r.isDynamicallyNamed() ? r.getDynamicName(pathValue) : r.getName(), null);
+            context.registerAdditionalCapabilityRequirement(ELYTRON_TLS_CAPABILITY_NAME, r.isDynamicallyNamed() ? r.getDynamicName(pathValue) : r.getName(), null);
         }
     }
 
