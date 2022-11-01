@@ -40,10 +40,12 @@ If you want to use a Galleon 'universe' (see the Galleon documentation) you coul
         <package name="docs"/>
         <package name="docs.licenses.merge"/>
     </default-packages>
+
     <generate-feature-specs>
         <extensions>
             <standalone>
                 <extension>org.wildfly.extension.elytron-tls</extension>
+                <extension>org.wildfly.extension.elytron-tls.undertow-server</extension>
             </standalone>
         </extensions>
     </generate-feature-specs>

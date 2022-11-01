@@ -103,6 +103,52 @@
                             </plugin-options>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>elytron-tls-undertow-https-provisioning</id>
+                        <goals>
+                            <goal>provision</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <install-dir>${project.build.directory}/undertow-example</install-dir>
+                            <record-state>false</record-state>
+                            <log-time>${galleon.log.time}</log-time>
+                            <offline>true</offline>
+                            <feature-packs>
+                                <feature-pack>
+                                    <groupId>org.wildfly</groupId>
+                                    <artifactId>wildfly-galleon-pack</artifactId>
+                                    <version>${version.org.wildfly}</version>
+                                </feature-pack>
+                                <feature-pack>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>elytron-tls-galleon-pack</artifactId>
+                                    <version>${project.version}</version>
+                                </feature-pack>
+                            </feature-packs>
+                            <configurations>
+                                <config>
+                                    <model>standalone</model>
+                                    <name>standalone.xml</name>
+                                    <layers>
+                                        <!--
+                                            Layers needed to have a base server that makes sense,
+                                            which are not required by this FP's layers
+                                        -->
+                                        <layer>jaxrs</layer>
+                                        <layer>management</layer>
+                                        <!-- Layers from this FP  -->
+                                        <layer>elytron-tls-undertow-https</layer>
+                                    </layers>
+                                </config>
+                            </configurations>
+                            <plugin-options>
+                                <jboss-maven-dist/>
+                                <jboss-fork-embedded>${galleon.fork.embedded}</jboss-fork-embedded>
+                                <optional-packages>passive+</optional-packages>
+                            </plugin-options>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
